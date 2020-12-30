@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id='app'>
+  <a v-bind:href="home">点击访问传智</a>
+  <!-- v-if -->
+  <a href="#" v-if="isLogin">是否看到见</a>
+  <!-- v-else -->
+  <span v-if='isLogin'>个人中心</span>
+  <span v-else>登录</span>
+  <!-- v-else-if -->
+<hr>
+  <span v-if='level === 1'>国王</span>
+  <span v-else-if='level === 2'>皇亲</span>
+  <span v-else-if='level === 3'>国戚</span>
+  <span v-else-if='level === 4'>大臣</span>
+  <span v-else>平民</span>
+
+<hr>
+  <h1 v-if="seen">if</h1>
+  <h1 v-show="seen">show</h1>
+
+</div>
+
+</body>
+<!-- 创建vue实例 .vue 属于 -->
+<script type="text/javascript">
+  //var变量的声明
+  //vm变量名
+  //new 关键字
+  //Vue() 创建实例对象
+  //我们定义的vue实例要和HTML的容器关联
+  var vm = new Vue({
+    el:'#app',
+    data:{
+      msg:'hello',
+      name:'itcast',
+      home:'http://www.itcast.cn',
+    }
+  })
+</script>
+</html>
